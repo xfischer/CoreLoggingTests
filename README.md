@@ -10,3 +10,7 @@
 
 **Sources :**
 - [Logging in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.)
+
+**Used frameworks**
+- .Net Standard 2.0
+- .Net Framework 4.6.1
