@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Logging.Debug;
-using MyNetStandardLib;
 using System;
 
 namespace ConsoleApp
@@ -11,12 +10,17 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-
+            // Setting up dependency injection
             var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);                
+            ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-            var myService = serviceProvider.GetService<MyService>();
+            // Get an instance of the service
+            // ILogger instance will be injected by dependency injection
+            // Note : if no DI is setup, MyService will work because ILogger is null-checked (ie _logger?.Info(msg))
+            var myService = serviceProvider.GetService<MyNetStandardLib.MyService>();
+
+            // Call the service (logs are made here)
             myService.DoSomething();
 
 
@@ -27,15 +31,15 @@ namespace ConsoleApp
         {
             services.AddLogging(config =>
             {
-                config.AddDebug();
-                config.AddConsole();
+                config.AddDebug(); // Log to debug (debug window in Visual Studio or any debugger attached)
+                config.AddConsole(); // Log to console (colored !)
             })
             .Configure<LoggerFilterOptions>(options =>
             {
-                options.AddFilter<DebugLoggerProvider>(null, LogLevel.Information);
-                options.AddFilter<ConsoleLoggerProvider>(null, LogLevel.Information);
+                options.AddFilter<DebugLoggerProvider>(null /* category*/ , LogLevel.Information /* min level */);
+                options.AddFilter<ConsoleLoggerProvider>(null  /* category*/ , LogLevel.Information /* min level */);
             })
-            .AddTransient<MyService>();
+            .AddTransient<MyNetStandardLib.MyService>(); // Register service from the library
             
         }
 
