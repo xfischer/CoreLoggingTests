@@ -18,18 +18,18 @@ namespace MyNetStandardLib
                 Debug.WriteLine("Logger is null (Debug)");
             } else
             {
-                _logger.LogDebug("Logger OK (logger)");
+                _logger?.LogDebug("Logger OK (logger)");
             }
         }
 
         public void DoSomething()
         {
-            _logger.LogDebug("DoSometing DEBUG message");
-            _logger.LogTrace("DoSometing TRACE message");
-            _logger.LogInformation("DoSometing INFO message");
-            _logger.LogWarning("DoSometing WARN message");
-            _logger.LogError("DoSometing ERROR message");
-            _logger.LogCritical("DoSometing CRITICAL message");
+            _logger?.LogDebug("DoSometing DEBUG message");
+            _logger?.LogTrace("DoSometing TRACE message");
+            _logger?.LogInformation("DoSometing INFO message");
+            _logger?.LogWarning("DoSometing WARN message");
+            _logger?.LogError("DoSometing ERROR message");
+            _logger?.LogCritical("DoSometing CRITICAL message");
 
         }
     }
