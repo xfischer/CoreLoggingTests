@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyNetStandardLib</name>
+    </assembly>
+    <members>
+        <member name="T:MyNetStandardLib.MyService">
+            <summary>
+            Test service
+            </summary>
+        </member>
+        <member name="M:MyNetStandardLib.MyService.#ctor(Microsoft.Extensions.Logging.ILogger{MyNetStandardLib.MyService})">
+            <summary>
+            Contructor taking an ILogger provided by DI container
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MyNetStandardLib.MyService.DoSomething">
+            <summary>
+            Test method logging at every level
+            </summary>
+        </member>
+    </members>
+</doc>

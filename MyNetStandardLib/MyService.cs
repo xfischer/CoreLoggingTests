@@ -5,9 +5,16 @@ using System.Threading.Tasks;
 
 namespace MyNetStandardLib
 {
+    /// <summary>
+    /// Test service
+    /// </summary>
     public class MyService
     {
         private readonly ILogger<MyService> _logger;
+        /// <summary>
+        /// Contructor taking an ILogger provided by DI container
+        /// </summary>
+        /// <param name="logger"></param>
         public MyService(ILogger<MyService> logger = null)
         {
             _logger = logger;
@@ -22,6 +29,10 @@ namespace MyNetStandardLib
             }
         }
 
+
+        /// <summary>
+        /// Test method logging at every level
+        /// </summary>
         public void DoSomething()
         {
             _logger?.LogDebug("DoSometing DEBUG message");

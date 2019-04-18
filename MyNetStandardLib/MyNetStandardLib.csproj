@@ -4,7 +4,12 @@
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <!--<PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <DocumentationFile>C:\Repos\CoreLoggingTests\MyNetStandardLib\MyNetStandardLib.xml</DocumentationFile>
+  </PropertyGroup>-->
 
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
