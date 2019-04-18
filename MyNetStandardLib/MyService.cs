@@ -8,7 +8,7 @@ namespace MyNetStandardLib
     public class MyService
     {
         private readonly ILogger<MyService> _logger;
-        public MyService(ILogger<MyService> logger)
+        public MyService(ILogger<MyService> logger = null)
         {
             _logger = logger;
             if (_logger == null)
