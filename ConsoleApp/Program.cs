@@ -50,7 +50,7 @@ namespace ConsoleApp
             .Configure<LoggerFilterOptions>(options =>
             {
                 options.AddFilter<DebugLoggerProvider>(null /* category*/ , LogLevel.Information /* min level */);
-                options.AddFilter<ConsoleLoggerProvider>(null  /* category*/ , LogLevel.Information /* min level */);
+                options.AddFilter<ConsoleLoggerProvider>(null  /* category*/ , LogLevel.Warning /* min level */);
             })
             .AddTransient<MyNetStandardLib.MyService>(); // Register service from the library
             
