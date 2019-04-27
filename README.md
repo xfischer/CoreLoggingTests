@@ -1,5 +1,7 @@
 # CoreLoggingTests
 
+Support files for the blog post : [Logging in a .Net Core Library](https://xfischer.github.io/logging-dotnet-core/)
+
 **A simple test solution with :**
 - A library emiting logs with ILogger from *Microsoft.Extensions.Logging.Abstractions*
 - A console app referencing the library and setting up filtered listeners using Dependency Injection
