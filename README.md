@@ -14,5 +14,6 @@ Support files for the blog post : [Logging in a .Net Core Library](https://xfisc
 - [Logging in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.)
 
 **Used frameworks**
-- .Net Standard 2.0
+- .Net Standard 2.1
 - .Net Framework 4.6.1
+- .Net Core 3.1
