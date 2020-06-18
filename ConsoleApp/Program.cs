@@ -20,7 +20,7 @@ namespace ConsoleApp
 
                 // Get an instance of the service
                 // ILogger instance will be injected by dependency injection
-                // Note : if no DI is setup, MyService will work because ILogger is null-checked (ie _logger?.Info(msg))
+                // Note : if no DI is setup, MyService will work because ILogger is null-checked and a NullLogger instance will be used
                 var myService = serviceProvider.GetService<MyNetStandardLib.MyService>();
 
                 // Call the service (logs are made here)
